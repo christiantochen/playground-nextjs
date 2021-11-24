@@ -1,0 +1,56 @@
+{
+  "name": "playground-nextjs",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "lint": "next lint",
+    "prettier-fix": "prettier --write ."
+  },
+  "sideEffect": false,
+  "dependencies": {
+    "@playground/ui": "*",
+    "autoprefixer": "^10.4.2",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "clsx": "^1.1.1",
+    "email-validator": "^2.0.4",
+    "lodash.random": "^3.2.0",
+    "lodash.throttle": "^4.1.1",
+    "next": "12.0.4",
+    "next-themes": "^0.0.15",
+    "postcss": "^8.4.6",
+    "postcss-nesting": "^10.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "tailwindcss": "^3.0.22"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.0.8",
+    "@types/body-scroll-lock": "^3.1.0",
+    "@types/lodash.random": "^3.2.6",
+    "@types/lodash.throttle": "^4.1.6",
+    "@types/node": "^17.0.8",
+    "@types/react": "^17.0.38",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "lint-staged": "^12.1.7",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.2.3",
+    "prettier": "^2.5.1",
+    "typescript": "4.3.4"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{md,mdx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
