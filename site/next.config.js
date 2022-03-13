@@ -1,13 +1,30 @@
 /** @type {import('next').NextConfig} */
+
+const { API_URL } = process.env
+
 module.exports = {
   reactStrictMode: true,
   env: {
-    GOAPP_API_URL: process.env.GOAPP_API_URL,
-    GOAPP_API_KEY: process.env.GOAPP_API_KEY,
-    GOAPP_AUTH_API_URL: process.env.GOAPP_AUTH_API_URL,
+    API_URL,
   },
   images: {
-    domains: ['media.dev.goapp.co.id', 'media.dev.alpha.dari.id'],
+    domains: [],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: `/:path*`,
+      },
+      {
+        source: '/blog',
+        destination: `http://localhost:3100/blog`,
+      },
+      {
+        source: '/blog/:path*',
+        destination: `http://localhost:3100/blog/:path*`,
+      },
+    ]
   },
 }
 

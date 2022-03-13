@@ -17,7 +17,7 @@ const Input: FC<InputProps> = (props) => {
   }
 
   return (
-    <div>
+    <div className='relative border rounded bg-primary border-gray-900 border-opacity-25'>
       <input
         className={cn(
           'bg-primary py-2 px-6 w-full appearance-none transition duration-150 ease-in-out pr-10 border border-accent-3 text-accent-6',

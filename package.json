@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": [
     "site",
+    "micro_sites/*",
     "packages/*"
   ],
   "scripts": {

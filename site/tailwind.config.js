@@ -6,6 +6,9 @@ module.exports = {
   safelist: ['outline-none'],
   theme: {
     extend: {
+      backgroundImage: {
+        'login-background': "url('/login-background.png')"
+      },
       fontSize: {
         '2xs': '.625rem',
       },
