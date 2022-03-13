@@ -1,3 +1,3 @@
-import authenticationApi from 'tabsquare/authentication/api'
+import { authenticationApi } from '@playground/tabsquare'
 
 export default authenticationApi

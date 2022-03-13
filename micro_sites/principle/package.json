@@ -1,7 +1,7 @@
 {
-  "name": "playground-home",
+  "name": "playground-principle",
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start",
     "analyze": "BUNDLE_ANALYZE=both next build",

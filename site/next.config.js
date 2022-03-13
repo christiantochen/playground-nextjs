@@ -17,12 +17,12 @@ module.exports = {
         destination: `/:path*`,
       },
       {
-        source: '/blog',
-        destination: `http://localhost:3100/blog`,
+        source: '/principles',
+        destination: `http://localhost:3100/principles`,
       },
       {
-        source: '/blog/:path*',
-        destination: `http://localhost:3100/blog/:path*`,
+        source: '/principles/:path*',
+        destination: `http://localhost:3100/principles/:path*`,
       },
     ]
   },

@@ -1,9 +1,22 @@
-import { Input, Text } from '@components/ui'
 import cn from 'clsx'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, MouseEvent, useState } from 'react'
+import { useAuth } from '@playground/tabsquare'
+import { Input, Text } from '@playground/ui'
+import Button from '@components/Button'
 
 const LoginPage: FC = () => {
+  const { login } = useAuth({ redirectTo: '/', redirectIfFound: true })
+  const [email, setEmail] = useState('admin@tabsquare.com')
+  const [password, setPassword] = useState('demo')
+  const [loading, setLoading] = useState(false)
+
+  const onClickLogin = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    login(email, password).then(() => setLoading(false))
+  }
+
   return (
     <div
       className={cn(
@@ -25,27 +38,36 @@ const LoginPage: FC = () => {
             Welcome to <b>Tabsquare HQ Module</b>
           </Text>
         </div>
-        <div className="flex flex-col space-y-2">
+        <form className="flex flex-col space-y-2">
           <Text className="text-sm text-center font-bold uppercase">Login</Text>
           <div className="space-y-2">
-            <Input placeholder="Email" floating />
-            <Input placeholder="Password" type="password" floating />
+            <Input
+              placeholder="Email"
+              value={email}
+              onChange={setEmail}
+              floating
+            />
+            <Input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={setPassword}
+              floating
+            />
           </div>
           <div className="flex flex-row justify-between py-4">
             <Text className="text-sm">Remember Me</Text>
             <Text className="text-sm">Forgot Password</Text>
           </div>
-          <button
-            className="p-2 rounded-full border-2 border-solid uppercase font-bold"
-            style={{
-              borderColor: 'rgba(255, 107, 0)',
-              backgroundColor: 'rgba(255, 107, 0, 0.15)',
-              color: 'rgba(255, 107, 0)',
-            }}
+          <Button
+            variant="slim"
+            disabled={loading}
+            loading={loading}
+            onClick={onClickLogin}
           >
             Sign in
-          </button>
-        </div>
+          </Button>
+        </form>
       </div>
     </div>
   )
